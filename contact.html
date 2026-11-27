@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Kampala University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="university-logo">
+        <img src="images/logo.png"
+             alt="Kampala University Logo"
+             class="logo-image">
+
+        <div>
+            <h2>KAMPALA UNIVERSITY</h2>
+            <p>We Strive For Excellence</p>
+        </div>
+    </div>
+
+    <button id="menuToggle" class="menu-toggle">☰</button>
+
+    <nav id="navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="news.html">News & Events</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+</header>
+
+<main>
+
+    <section class="contact-banner">
+        <h1>Contact Us</h1>
+        <p>We welcome your questions, feedback and enquiries.</p>
+    </section>
+
+    <section class="contact-intro">
+        <h2>Get in Touch</h2>
+        <p>
+            Contact Kampala University for information about academic
+            programmes, campuses,admissions and other university services.
+        </p>
+    </section>
+
+    <section class="contact-container">
+
+        <div class="contact-information">
+
+            <h2>Contact Information</h2>
+
+            <div class="contact-item">
+                <h3>University</h3>
+                <p>Kampala University</p>
+            </div>
+
+            <div class="contact-item">
+                <h3>we are located</h3>
+                <p>p.o.box 25454,ggaba,kampala uganda</p>.</p>
+                
+                
+            </div>
+
+            <div class="contact-item">
+                <h3>call or watasp on</h3>
+                <p>+25649797062.</p>
+            </div>
+
+            <div class="contact-item">
+                <h3>visit us on</h3>
+                <p>infor@ku.ac.ug.</p>
+            </div>
+
+            <div class="contact-item">
+                <h3>Website</h3>
+                <p>ku.ac.ug.</p>
+            </div>
+
+        </div>
+
+        <div class="contact-form-section">
+
+            <h2>Send an Enquiry</h2>
+
+            <form id="contactForm">
+
+                <label for="contactName">Full Name</label>
+                <input type="text" id="contactName"
+                       placeholder="Enter your name" required>
+
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail"
+                       placeholder="Enter your email" required>
+
+                <label for="contactSubject">Subject</label>
+                <input type="text" id="contactSubject"
+                       placeholder="Enter enquiry subject" required>
+
+                <label for="contactMessage">Your Message</label>
+                <textarea id="contactMessage"
+                          placeholder="Write your message here"
+                          rows="6" required></textarea>
+
+                <button type="submit" class="contact-button">
+                    SUBMIT ENQUIRY
+                </button>
+
+                <p id="contactResponse" role="status"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Kampala University Website Project. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

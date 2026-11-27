@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Library | Kampala University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="ku-header">
+    <div class="ku-brand">
+        <a href="index.html" class="ku-logo">
+            <img src="images/logo.png" alt="Kampala University Logo">
+        </a>
+        <div class="ku-university-name">
+            <h2>KAMPALA UNIVERSITY</h2>
+            <p>Knowledge • Excellence • Service</p>
+        </div>
+    </div>
+
+    <nav class="ku-navigation" id="navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="library.html">Library</a>
+        <a href="contact.html">Contact</a>
+        <a href="apply.html" class="ku-apply-button">Apply Now</a>
+    </nav>
+
+    <button class="ku-menu-toggle" id="menuToggle">☰</button>
+</header>
+
+<main>
+    <section class="library-hero">
+        <h1>WELCOME TO THE UNIVERSITY LIBRARY</h1>
+        <p>Discover knowledge, explore resources and support your academic journey.</p>
+    </section>
+
+    <section class="library-intro">
+        <h2>About Our Library</h2>
+        <p>
+            The Kampala University Library section provides access to
+            learning resources that support teaching, research and
+            independent study. Students and staff can explore books,
+            journals and other academic materials.
+        </p>
+    </section>
+
+    <section class="library-services">
+        <h2>Our Library Services</h2>
+
+        <div class="library-grid">
+            <div class="library-card">
+                <h3>Physical Books</h3>
+                <p>Access textbooks and reference materials for your studies.</p>
+            </div>
+
+            <div class="library-card">
+                <h3>Electronic Resources</h3>
+                <p>Explore digital learning materials and academic resources.</p>
+            </div>
+
+            <div class="library-card">
+                <h3>Research Support</h3>
+                <p>Find resources to support assignments and academic research.</p>
+            </div>
+
+            <div class="library-card">
+                <h3>Study Spaces</h3>
+                <p>Find a suitable environment for reading and individual study.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="library-search">
+        <h2>Search Library Resources</h2>
+        <p>Try searching the sample library catalogue.</p>
+
+        <input type="text" id="bookSearch"
+               placeholder="Enter book title, author or subject">
+
+        <button onclick="searchBooks()">Search</button>
+
+        <div id="searchResults"></div>
+        <p class="library-note">
+            Demonstration catalogue: real library holdings must be added
+            by the university library administrator.
+        </p>
+    </section>
+
+<!-- E-LIBRARY SECTION -->
+<section class="e-library" id="e-library">
+    <div class="section-heading">
+        <h2>Kampala University E-Library</h2>
+        <p>Access learning materials, lecture notes and academic resources online.</p>
+    </div>
+
+    <input
+        type="text"
+        id="pdfSearch"
+        placeholder="Search for books, notes or subjects..."
+        onkeyup="filterPDFs()"
+    >
+
+    <div class="pdf-grid" id="pdfGrid">
+
+        <div class="pdf-card">
+            <div class="pdf-icon">📘</div>
+            <h3>Computer Science Notes</h3>
+            <p>Learning materials for Computer Science students.</p>
+            <a href="pdfs/computer-science.pdf" target="_blank">Open PDF</a>
+            <a href="pdfs/computer-science.pdf" download>Download</a>
+        </div>
+
+        <div class="pdf-card">
+            <div class="pdf-icon">📗</div>
+            <h3>Database Systems</h3>
+            <p>Database concepts and practical learning notes.</p>
+            <a href="pdfs/database-systems.pdf" target="_blank">Open PDF</a>
+            <a href="pdfs/database-systems.pdf" download>Download</a>
+        </div>
+
+        <div class="pdf-card">
+            <div class="pdf-icon">📙</div>
+            <h3>Programming Notes</h3>
+            <p>Programming concepts and coding materials.</p>
+            <a href="pdfs/programming-notes.pdf" target="_blank">Open PDF</a>
+            <a href="pdfs/programming-notes.pdf" download>Download</a>
+        </div>
+
+    </div>
+
+    <p id="pdfMessage"></p>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Kampala University Website Project.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+const books = [
+    {title: "Introduction to Computer Science", author: "Sample Author", subject: "Computing"},
+    {title: "Database Management Systems", author: "Sample Author", subject: "Information Technology"},
+    {title: "Principles of Management", author: "Sample Author", subject: "Management"},
+    {title: "Research Methods", author: "Sample Author", subject: "Research"}
+];
+
+function searchBooks() {
+    const query = document.getElementById("bookSearch").value.toLowerCase().trim();
+    const results = document.getElementById("searchResults");
+
+    if (!query) {
+        results.innerHTML = "<p>Please enter a search term.</p>";
+        return;
+    }
+
+    const matches = books.filter(book =>
+        book.title.toLowerCase().includes(query) ||
+        book.author.toLowerCase().includes(query) ||
+        book.subject.toLowerCase().includes(query)
+    );
+
+    results.innerHTML = matches.length
+        ? matches.map(book =>
+            `<div class="library-result">
+                <strong>${book.title}</strong><br>
+                Author: ${book.author}<br>
+                Subject: ${book.subject}
+            </div>`
+          ).join("")
+        : "<p>No matching sample resources found.</p>";
+}
+</script>
+
+</body>
+</html>
